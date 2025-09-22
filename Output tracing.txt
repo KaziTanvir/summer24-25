@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+void printHero(string *x) {
+    if (*x == "IronMan") { *x = "CaptainAmerica"; }
+    else if (*x == "Batman") { *x = "Superman"; }
+    else { *x = "SpiderMan"; }
+}
+int main() {
+    cout << "Run" << endl;
+    string heroes[3] = {"IronMan", "Batman", "Thor"};
+    string *p = heroes;
+
+    for (int i = 0; i < 3; i++) {
+        printHero(p + i);
+        cout << *(p + i) << endl;
+    }
+    cout << heroes[0] + heroes[2] << endl;
+    return 0;
+}
